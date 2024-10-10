@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Line chart showing the number of tourists visiting Australia by year, including estimated data for 2023.",
+    "width": 600,
+    "height": 400,
+    "data": {
+      "values": [
+        {"Year": 2013, "Visitors": 6.5},
+        {"Year": 2014, "Visitors": 6.8},
+        {"Year": 2015, "Visitors": 7.2},
+        {"Year": 2016, "Visitors": 7.5},
+        {"Year": 2017, "Visitors": 8.0},
+        {"Year": 2018, "Visitors": 8.5},
+        {"Year": 2019, "Visitors": 9.5},
+        {"Year": 2020, "Visitors": 1.9},
+        {"Year": 2021, "Visitors": 0.3},
+        {"Year": 2022, "Visitors": 2.2},
+        {"Year": 2023, "Visitors": 4.0}
+      ]
+    },
+    "mark": {
+      "type": "line",
+      "point": true,
+      "tooltip": true
+    },
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "ordinal",
+        "title": "Year"
+      },
+      "y": {
+        "field": "Visitors",
+        "type": "quantitative",
+        "title": "Number of Visitors (Millions)"
+      },
+      "color": {
+        "value": "#1f77b4"
+      }
+    }
+  }
+  

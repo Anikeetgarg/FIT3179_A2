@@ -1,0 +1,39 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bar chart showing the number of visitors at various tourist attractions in Melbourne.",
+  "width": 700,
+  "height": 400,
+  "data": {
+    "values": [
+      {"Location": "Federation Square", "Visitors": 3200},
+      {"Location": "Royal Botanic Gardens", "Visitors": 2500},
+      {"Location": "Melbourne Zoo", "Visitors": 1800},
+      {"Location": "National Gallery of Victoria", "Visitors": 2100},
+      {"Location": "St Kilda Beach", "Visitors": 2900},
+      {"Location": "Queen Victoria Market", "Visitors": 2700},
+      {"Location": "Melbourne Museum", "Visitors": 1600}
+    ]
+  },
+  "mark": {
+    "type": "bar",
+    "color": "green"
+  },
+  "encoding": {
+    "x": {
+      "field": "Location",
+      "type": "nominal",
+      "title": "Tourist Attraction",
+      "sort": "-y",
+      "axis": {"labelAngle": -45}
+    },
+    "y": {
+      "field": "Visitors",
+      "type": "quantitative",
+      "title": "Number of Visitors (Thousands)"
+    },
+    "tooltip": [
+      {"field": "Location", "type": "nominal", "title": "Tourist Attraction"},
+      {"field": "Visitors", "type": "quantitative", "title": "Visitors (Thousands)", "format": ","}
+    ]
+  }
+}
