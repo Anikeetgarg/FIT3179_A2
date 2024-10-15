@@ -4,7 +4,7 @@
   "width": 685,
   "height": 370,
   "data": {
-    "url": "data/australia_tourism_data.csv",
+    "url": "https://raw.githubusercontent.com/Anikeetgarg/FIT3179_A2/refs/heads/main/data/australia_tourism_data.csv",
     "format": {"type": "csv"}
   },
   "layer": [

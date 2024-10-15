@@ -7,7 +7,7 @@
       "type": "mercator"
     },
     "data": {
-      "url": "graph/australia-states.topojson.json",
+      "url": "https://raw.githubusercontent.com/Anikeetgarg/FIT3179_A2/refs/heads/main/graph/australia-states.topojson.json",
       "format": {
         "type": "topojson",
         "feature": "STE_2011_AUST"
@@ -27,7 +27,7 @@
             "lookup": "properties.STE_NAME11",
             "from": {
               "data": {
-                "url": "data/chloro.csv",
+                "url": "https://raw.githubusercontent.com/Anikeetgarg/FIT3179_A2/refs/heads/main/data/chloro.csv",
                 "format": {
                   "type": "csv"
                 }

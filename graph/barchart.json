@@ -4,7 +4,7 @@
   "width": 666,
   "height": 310,
   "data": {
-    "url": "data/melbourne_tourist_attractions.csv",
+    "url": "https://raw.githubusercontent.com/Anikeetgarg/FIT3179_A2/refs/heads/main/data/melbourne_tourist_attractions.csv",
     "format": {"type": "csv"}
   },
   "mark": {

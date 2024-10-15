@@ -4,7 +4,7 @@
   "width": 566,
   "height": 450,
   "data": {
-    "url": "data/visitor_purpose_data.csv",
+    "url": "https://raw.githubusercontent.com/Anikeetgarg/FIT3179_A2/refs/heads/main/data/visitor_purpose_data.csv",
     "format": {"type": "csv"}
   },
   "layer": [
