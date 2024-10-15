@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Line chart showing the number of tourists visiting Australia by year, including estimated data for 2023.",
+  "width": 685,
+  "height": 370,
+  "data": {
+    "url": "data/australia_tourism_data.csv",
+    "format": {"type": "csv"}
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "point": true,
+        "tooltip": true
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "title": "Year"
+        },
+        "y": {
+          "field": "Visitors",
+          "type": "quantitative",
+          "title": "Number of Visitors (Millions)"
+        },
+        "color": {
+          "value": "#1f77b4"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "dy": -10,
+        "fontSize": 12,
+        "color": "red"
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal"},
+        "y": {"field": "Visitors", "type": "quantitative"},
+        "text": {
+          "condition": {
+            "test": "datum.Year == 2021",
+            "value": "COVID-19 travel restrictions"
+          }
+        }
+      }
+    }
+  ]
+}

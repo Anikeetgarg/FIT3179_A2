@@ -1,0 +1,74 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "International Tourist Visitors by State in Australia (2023)",
+    "width": 580,
+    "height": 400,
+    "projection": {
+      "type": "mercator"
+    },
+    "data": {
+      "url": "graph/australia-states.topojson.json",
+      "format": {
+        "type": "topojson",
+        "feature": "STE_2011_AUST"
+      }
+    },
+    "layer": [
+      {
+        "mark": {
+          "type": "geoshape",
+          "fill": "gainsboro",
+          "stroke": "white"
+        }
+      },
+      {
+        "transform": [
+          {
+            "lookup": "properties.STE_NAME11",
+            "from": {
+              "data": {
+                "url": "data/chloro.csv",
+                "format": {
+                  "type": "csv"
+                }
+              },
+              "key": "state_territory",
+              "fields": ["visitors"]
+            }
+          }
+        ],
+        "mark": {
+          "type": "geoshape"
+        },
+        "encoding": {
+          "color": {
+            "field": "visitors",
+            "type": "quantitative",
+            "scale": {
+              "domain": [4000, 250000],
+              "range": ["#c6dbef", "#08306b"]  
+            },
+            "title": "Number of Visitors"
+          },
+          "tooltip": [
+            {
+              "field": "properties.STE_NAME11",
+              "type": "nominal",
+              "title": "State"
+            },
+            {
+              "field": "visitors",
+              "type": "quantitative",
+              "title": "Number of Visitors"
+            }
+          ]
+        }
+      }
+    ],
+    "config": {
+      "view": {
+        "stroke": null
+      }
+    }
+  }
+  

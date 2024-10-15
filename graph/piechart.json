@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Donut chart showing the proportion of visitors by purpose of visit to Australia.",
+  "width": 566,
+  "height": 450,
+  "data": {
+    "url": "data/visitor_purpose_data.csv",
+    "format": {"type": "csv"}
+  },
+  "layer": [
+    {
+      "mark": {"type": "arc", "outerRadius": 150, "innerRadius": 70},
+      "encoding": {
+        "theta": {"field": "Visitors", "type": "quantitative"},
+        "color": {"field": "Purpose", "type": "nominal"},
+        "tooltip": [
+          {"field": "Purpose", "type": "nominal"},
+          {"field": "Visitors", "type": "quantitative", "format": ","}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "text", "radius": 170, "fontSize": 10, "fill": "black"},
+      "encoding": {
+        "theta": {"field": "Visitors", "type": "quantitative", "stack": true},
+        "text": {"field": "Purpose", "type": "nominal"}
+      }
+    }
+  ],
+  "view": {"stroke": null}
+}

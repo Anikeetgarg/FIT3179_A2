@@ -1,0 +1,32 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Bar chart showing the number of visitors at various tourist attractions in Melbourne.",
+  "width": 666,
+  "height": 310,
+  "data": {
+    "url": "data/melbourne_tourist_attractions.csv",
+    "format": {"type": "csv"}
+  },
+  "mark": {
+    "type": "bar",
+    "color": "#088F8F"
+  },
+  "encoding": {
+    "x": {
+      "field": "Location",
+      "type": "nominal",
+      "title": "Tourist Attraction",
+      "sort": "-y",
+      "axis": {"labelAngle": -45}
+    },
+    "y": {
+      "field": "Visitors",
+      "type": "quantitative",
+      "title": "Number of Visitors (Thousands)"
+    },
+    "tooltip": [
+      {"field": "Location", "type": "nominal", "title": "Tourist Attraction"},
+      {"field": "Visitors", "type": "quantitative", "title": "Visitors (Thousands)", "format": ","}
+    ]
+  }
+}

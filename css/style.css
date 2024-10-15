@@ -1,0 +1,111 @@
+/* Basic reset for consistent styling across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Update the body font-family */
+body {
+    font-family: 'Lato', Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #0073e6;
+    color: white;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1em;
+}
+
+/* Flexbox layout for charts and text side by side */
+.chart-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    margin: 20px 0;
+    gap: 20px;
+    width: 100%;
+}
+
+.chart-row .chart,
+.chart-row .text-box {
+    flex: 1;
+    width: 48%;
+    height: auto; /* Set auto height to let content dictate height */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    min-height: 450px; /* Ensure a minimum height to match */
+}
+
+.chart-row .text-box {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 450px;
+}
+
+.chart-row .text-box h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #0073e6;
+}
+
+.chart-row .text-box p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Styling for Insights text-box */
+.insights-text-box {
+    padding: 20px;
+    background-color: #fff; /* Different background to differentiate it */
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Space between sections */
+}
+
+.insights-text-box h2 {
+    margin-bottom: 10px;
+    font-size: 1.7em;
+    color: #0073e6;
+}
+
+.insights-text-box p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+    border-radius: 8px;
+}

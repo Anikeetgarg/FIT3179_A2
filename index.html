@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizations Overview</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.21.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.2"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <h1>Tourism Trends and Visitor Patterns in Australia</h1>
+    </header>
+
+    <!-- Row 1: Pie chart and Line chart side by side -->
+    <section class="chart-row">
+        <div class="chart" id="pie-chart"></div>
+        <div class="chart" id="line-chart"></div>
+    </section>
+
+    <!-- Annotations for Row 1 -->
+    <section class="insights-text-box">
+        <h2>Overview of International Tourism in Australia</h2>
+        <p>
+            The donut chart shows the proportion of international visitors to Australia by purpose. The largest segment is for leisure/holiday, which highlights Australia's appeal as a major tourist destination. Other significant purposes include visiting friends/relatives, business, and education. A small portion falls under the "Other" category, indicating less common reasons for travel.
+        </p>
+        <p>
+            The line chart shows the number of tourists visiting Australia from 2013 to 2023. There is steady growth from 2013 to 2019, peaking at over 9 million visitors. However, due to COVID-19, there was a sharp drop in 2020 and 2021. The chart also shows a recovery trend starting in 2022, with 2023 seeing a rise in tourism numbers as restrictions ease.
+        </p>
+        <p>
+            <b>Data Sources</b>:
+            <a href="https://www.tra.gov.au/domestic/domestic-tourism-results" target="_blank">Tourism Research Australia - Domestic Tourism Results</a>, 
+            <a href="https://www.abs.gov.au/statistics/industry/tourism-and-transport/overseas-arrivals-and-departures-australia/latest-release" target="_blank">Australian Bureau of Statistics - Overseas Arrivals and Departures</a>
+        </p>
+        
+    </section>
+
+    <!-- Row 2: Bar chart and text box side by side -->
+    <section class="chart-row">
+        <div class="chart" id="bar-chart"></div>
+        <div class="text-box">
+            <h2>Visitor's at Melbourne's Top Tourist Attractions</h2>
+            <p>
+                The bar chart shows the number of visitors at various tourist attractions in Melbourne. Federation Square leads as the most visited attraction, followed by St Kilda Beach and Queen Victoria Market. These top destinations reflect Melbourne’s vibrant cultural and recreational spots, attracting both international and domestic tourists. The Royal Botanic Gardens and the Melbourne Zoo also remain popular, highlighting the city's diverse offering of natural attractions and cultural landmarks.<br><br> Additionally, the consistent popularity of these attractions emphasizes Melbourne's status as a premier tourist destination in Australia.<br><br> Moreover, the variety of experiences these attractions offer ensures that Melbourne appeals to a broad spectrum of visitor interests.
+            </p>
+            <p>
+                <b>Data Sources</b>:
+                <a href="https://www.tra.gov.au/domestic/domestic-tourism-results" target="_blank">Tourism Research Australia - Domestic Tourism Results</a>, 
+                <a href="https://www.abs.gov.au/statistics/industry/tourism-and-transport/overseas-arrivals-and-departures-australia/latest-release" target="_blank">Australian Bureau of Statistics - Overseas Arrivals and Departures</a>
+            </p>
+            
+            
+                
+        </div>
+    </section>
+
+    <!-- Row 3: Choropleth Map and text box side by side -->
+    <section class="chart-row">
+        <div class="text-box">
+            <h2>Geographic Distribution of Tourists Across Australia </h2>
+            <p>
+                The choropleth map illustrates the number of international tourist visitors across Australian states in 2023. New South Wales (NSW) attracts the highest number of visitors, with over 250,000 arrivals, followed by Queensland and Victoria, which also see significant numbers of tourists, ranging from 150,000 to 200,000 visitors. The lighter shades in states like South Australia and Tasmania indicate fewer tourist visits, with visitor numbers below 100,000. The Northern Territory and Western Australia show moderate tourist activity, reflecting their more remote locations but steady international interest, particularly for natural attractions.<br><br> Overall, the map provides a clear geographic breakdown of how international tourism is distributed across the country. In contrast, the Australian Capital Territory (ACT) shows relatively lower visitor numbers, with less than 50,000 tourists, reflecting its smaller geographic size and fewer tourist attractions.
+            </p>
+            <p>
+                <strong>Data Sources:</strong> 
+                <a href="https://www.abs.gov.au/statistics/industry/tourism-and-transport/overseas-arrivals-and-departures-australia/latest-release" target="_blank">Australian Bureau of Statistics - Overseas Arrivals and Departures</a>
+            </p>
+            
+        </div>
+        <div class="chart" id="chloro-map"></div>
+    </section>
+
+    <footer>
+        <p>Created by Anikeet Garg (Id - 33546584)<br> All rights reserved &copy; 15-10-2024.</p>
+    </footer>
+
+    <script>
+        // Embed the Pie Chart
+        vegaEmbed('#pie-chart', 'graph/piechart.json').catch(console.error);
+
+        // Embed the Line Chart
+        vegaEmbed('#line-chart', 'graph/linechart.json').catch(console.error);
+
+        // Embed the Bar Chart
+        vegaEmbed('#bar-chart', 'graph/barchart.json').catch(console.error);
+
+        // Embed the Choropleth Map
+        vegaEmbed('#chloro-map', 'graph/choro.json').catch(console.error);
+    </script>
+</body>
+</html>
